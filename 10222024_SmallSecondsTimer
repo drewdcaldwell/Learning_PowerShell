@@ -1,0 +1,28 @@
+function countdown($i){
+
+    [int] $i = $i
+    for($i; $i -ge 0; $i--){
+        Clear-Host
+        Write-Host "$i seconds"
+        Start-Sleep -seconds 1
+    }
+    
+    Clear-Host
+    Write-Host "Time's Up"
+}
+
+function getSeconds{
+    $seconds = Read-Host "Enter number of seconds for countdown"
+    return $seconds
+}
+
+
+$seconds = getSeconds
+
+if ($seconds -eq 0){
+    getSeconds
+}
+else{
+    countdown($seconds)
+}
+
